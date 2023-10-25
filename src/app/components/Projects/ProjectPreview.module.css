@@ -1,0 +1,38 @@
+.project {
+  background: var(--bg-secondary, #272727);
+  border-radius: 0.3rem;
+  padding: var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.project h3 {
+  font-weight: 400;
+}
+
+.titleContainer {
+  display: flex;
+  gap: var(--container-padding);
+  align-items: center;
+}
+
+.project ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.project a {
+  border-bottom: solid 1px white;
+  width: max-content;
+}
+
+.project a svg {
+  fill: white;
+  height: 0.6rem;
+  width: 0.6rem;
+}

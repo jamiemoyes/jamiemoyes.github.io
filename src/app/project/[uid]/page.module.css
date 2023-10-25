@@ -1,0 +1,18 @@
+.badgeList {
+  display: grid;
+  grid-template-columns: 1fr max-content max-content;
+  justify-items: start;
+  align-items: baseline;
+  gap: var(--container-padding);
+}
+
+.projectPage p {
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.projectPage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--container-padding);
+}
