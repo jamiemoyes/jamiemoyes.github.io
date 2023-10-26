@@ -3,7 +3,7 @@ import classes from "./Badge.module.css";
 import { PropsWithChildren } from "react";
 
 interface BadgeProps extends PropsWithChildren {
-  colour?: Colour | string;
+  colour?: Colour;
   variant?: "standard" | "bold";
 }
 

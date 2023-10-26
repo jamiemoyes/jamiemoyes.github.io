@@ -4,6 +4,7 @@ import { ArrowRight } from "@/app/shared/icons";
 import { Badge } from "../Badge/Badge";
 import { ProjectDocumentData } from "../../../../prismicio-types";
 import { formatDatePreview } from "@/app/shared/utils";
+import { useEffect } from "react";
 
 // interface Attribute {
 //   text: string;
@@ -30,7 +31,7 @@ const ProjectPreview: React.FC<ProjectPreviewType> = ({
       <div className={styles.titleContainer}>
         <h3>{title}</h3>
         {!reducedInfo && (
-          <Badge variant="bold" colour={colour?.toString() || Colour.Blue}>
+          <Badge variant="bold" colour={colour?.toString() as Colour}>
             {formatDatePreview(from?.toString(), to?.toString())}
           </Badge>
         )}

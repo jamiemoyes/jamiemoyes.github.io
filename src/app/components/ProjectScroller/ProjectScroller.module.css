@@ -26,3 +26,14 @@
   left: 0;
   width: 100vw;
 }
+
+@container page (min-width: 500px) {
+  .projectContainer {
+    /* overflow: scroll; */
+    overflow: hidden;
+  }
+  .projectScroller {
+    /* padding-inline-end: 0; */
+    /* width: auto; */
+  }
+}

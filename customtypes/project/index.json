@@ -6,26 +6,46 @@
   "status": true,
   "json": {
     "Main": {
-      "uid": { "config": { "label": "UID" }, "type": "UID" },
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
       "title": {
         "type": "Text",
-        "config": { "label": "Title", "placeholder": "" }
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
       },
       "company": {
         "type": "Text",
-        "config": { "label": "Company", "placeholder": "" }
+        "config": {
+          "label": "Company",
+          "placeholder": ""
+        }
       },
       "location": {
         "type": "Text",
-        "config": { "label": "Location", "placeholder": "" }
+        "config": {
+          "label": "Location",
+          "placeholder": ""
+        }
       },
       "start_date": {
         "type": "Timestamp",
-        "config": { "label": "Start Date", "placeholder": "" }
+        "config": {
+          "label": "Start Date",
+          "placeholder": ""
+        }
       },
       "end_date": {
         "type": "Timestamp",
-        "config": { "label": "End date", "placeholder": "" }
+        "config": {
+          "label": "End date",
+          "placeholder": ""
+        }
       },
       "is_current": {
         "type": "Boolean",
@@ -43,15 +63,24 @@
           "fields": {
             "icon": {
               "type": "Text",
-              "config": { "label": "Icon", "placeholder": "" }
+              "config": {
+                "label": "Icon",
+                "placeholder": ""
+              }
             },
             "icon_description": {
               "type": "Text",
-              "config": { "label": "Icon Description", "placeholder": "" }
+              "config": {
+                "label": "Icon Description",
+                "placeholder": ""
+              }
             },
             "text": {
               "type": "Text",
-              "config": { "label": "Text", "placeholder": "" }
+              "config": {
+                "label": "Text",
+                "placeholder": ""
+              }
             }
           }
         }
@@ -66,13 +95,18 @@
         }
       },
       "accent_colour": {
-        "type": "Color",
-        "config": { "label": "Accent Colour", "placeholder": "" }
+        "type": "Text",
+        "config": {
+          "label": "Colour",
+          "placeholder": ""
+        }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
-        "config": { "choices": {} }
+        "config": {
+          "choices": {}
+        }
       }
     },
     "SEO & Metadata": {
@@ -85,7 +119,10 @@
       },
       "meta_image": {
         "config": {
-          "constraint": { "height": 1260, "width": 2400 },
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
           "label": "Meta Image",
           "thumbnails": []
         },

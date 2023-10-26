@@ -396,15 +396,15 @@ interface ProjectDocumentData {
   description: prismic.RichTextField;
 
   /**
-   * Accent Colour field in *Project*
+   * Colour field in *Project*
    *
-   * - **Field Type**: Color
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: project.accent_colour
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#color
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  accent_colour: prismic.ColorField;
+  accent_colour: prismic.KeyTextField;
 
   /**
    * Slice Zone field in *Project*
@@ -485,9 +485,14 @@ declare module "@prismicio/client" {
       AttributeDocumentData,
       HomeDocument,
       HomeDocumentData,
+      HomeDocumentDataBioItem,
+      HomeDocumentDataPinBoardLinksItem,
+      HomeDocumentDataProjectsItem,
+      HomeDocumentDataAboutItem,
       HomeDocumentDataSlicesSlice,
       ProjectDocument,
       ProjectDocumentData,
+      ProjectDocumentDataAttributesItem,
       ProjectDocumentDataSlicesSlice,
       AllDocumentTypes,
     };

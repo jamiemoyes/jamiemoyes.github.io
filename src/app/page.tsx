@@ -9,10 +9,7 @@ import { ProjectScroller } from "./components/ProjectScroller/ProjectScroller";
 import { createClient } from "@/prismicio";
 import * as prismic from "@prismicio/client";
 import { About } from "./components/About/About";
-import {
-  HomeDocumentDataProjectsItem,
-  ProjectDocument,
-} from "../../prismicio-types";
+import { HomeDocumentDataProjectsItem } from "../../prismicio-types";
 
 function queryHomepage() {
   const client = createClient();
@@ -43,20 +40,24 @@ export default async function Home() {
   return (
     <>
       <Container colour={Colour.Red}>
-        {page.data.bio.map((bio) => (
-          <Bio key={bio.description} content={bio} />
-        ))}
-        <div className={styles.badgeList}>
-          <Badge>
-            <i>📍</i> Glasgow
-          </Badge>
-          <Badge>
-            <i>💼</i> AND Digital
-          </Badge>
-        </div>
-        <div className={styles.pinBoard}>
-          <PinBoard />
-          <SpotifyWidget />
+        <div className={styles.responsiveGrid}>
+          {page.data.bio.map((bio) => (
+            <Bio key={bio.description} content={bio} />
+          ))}
+          <div className={styles.media}>
+            <div className={styles.badgeList}>
+              <Badge>
+                <i>📍</i> Glasgow
+              </Badge>
+              <Badge>
+                <i>💼</i> AND Digital
+              </Badge>
+            </div>
+            <div className={styles.pinBoard}>
+              <PinBoard />
+              <SpotifyWidget />
+            </div>
+          </div>
         </div>
       </Container>
       {projects && <ProjectScroller projects={projects} />}

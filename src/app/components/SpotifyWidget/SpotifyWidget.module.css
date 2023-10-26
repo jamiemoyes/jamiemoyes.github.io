@@ -1,6 +1,6 @@
 .trackContainer {
   display: grid;
-  grid-template-columns: 1fr max-content;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
   overflow: hidden;
   padding: var(--container-padding);
   background-color: var(--bg-secondary);

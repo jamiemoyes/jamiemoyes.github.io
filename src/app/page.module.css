@@ -1,23 +1,11 @@
 .main {
+  container: page / inline-size;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-  --bg-primary: #f1f1f1;
-  --bg-secondary: #272727;
-  --text-primary: #000000;
-  --text-secondary: #f1f1f1;
-  --bg-red: #ffa195;
-  --bg-yellow: #fff0ca;
-  --bg-purple: #f1d3ff;
-  --foreground-yellow: #eeff89;
-  --foreground-blue: #4553cb;
-  --foreground-lightblue: #00b4dc;
-  --foreground-red: #dc2800;
-  --foreground-purple: #a889ff;
-  --container-padding: 0.7rem;
 
   padding-bottom: var(--container-padding);
   padding-inline: var(--container-padding);
@@ -29,7 +17,10 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  max-width: 60rem;
   gap: var(--container-padding);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header {
@@ -64,4 +55,16 @@
   display: flex;
   gap: var(--container-padding);
   align-items: flex-start;
+}
+
+.responsiveGrid {
+  display: grid;
+  gap: var(--container-padding);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--container-padding);
 }

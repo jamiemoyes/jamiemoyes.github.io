@@ -3,9 +3,10 @@
   border-radius: 0.7rem;
   display: flex;
   flex-direction: column;
+  gap: var(--container-padding);
+  /* max-width: 60rem; */
   /* flex-wrap: wrap;
   align-items: flex-start; */
-  gap: var(--container-padding);
 }
 
 .red {
