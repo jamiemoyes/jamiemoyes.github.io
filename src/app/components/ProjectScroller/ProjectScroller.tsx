@@ -12,17 +12,22 @@ import * as prismic from "@prismicio/client";
 const colors = [Colour.Red, Colour.Blue, Colour.LightBlue];
 
 type ProjectPreviewType = {
+  title?: string;
   projects: (ProjectDocument | undefined)[];
+  wrap?: boolean;
 };
 
-const ProjectScroller: React.FC<ProjectPreviewType> = async ({ projects }) => {
+const ProjectScroller: React.FC<ProjectPreviewType> = async ({
+  title = "Projects",
+  projects,
+  wrap,
+}) => {
   return (
     <div className={styles.projectContainer}>
-      <h2>Projects</h2>
-      <div className={styles.projectScroller}>
-        {projects.map((project) => {
-          console.log({ project });
-          return (
+      <h2>{title}</h2>
+      <div className={styles.projectScroller} data-wrap={wrap}>
+        {projects.map(
+          (project) =>
             project && (
               <ProjectPreview
                 key={project.uid}
@@ -34,10 +39,10 @@ const ProjectScroller: React.FC<ProjectPreviewType> = async ({ projects }) => {
                 start_date={project.data.start_date}
                 uid={project.uid}
                 title={project.data.title}
+                badge={!wrap}
               />
             )
-          );
-        })}
+        )}
       </div>
     </div>
   );

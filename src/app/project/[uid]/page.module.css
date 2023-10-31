@@ -6,6 +6,21 @@
   gap: var(--container-padding);
 }
 
+.rightColumn {
+  width: 100%;
+}
+
+.fullProjectPreview {
+  display: none;
+}
+
+.leftColumn {
+  gap: var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .projectPage p {
   font-size: 0.8rem;
   color: var(--text-primary);
@@ -13,6 +28,24 @@
 
 .projectPage {
   display: flex;
-  flex-direction: column;
   gap: var(--container-padding);
+  flex-wrap: wrap-reverse;
+  /* padding-inline: auto; */
+}
+
+@media (min-width: 60rem) {
+  .leftColumn {
+    max-width: 17.5rem;
+  }
+
+  .rightColumn {
+    max-width: 40rem;
+  }
+  .fullProjectPreview {
+    display: block;
+  }
+
+  .reducedProjectPreview {
+    display: none;
+  }
 }

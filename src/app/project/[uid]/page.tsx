@@ -24,33 +24,53 @@ function queryOtherProjects(id: string) {
 
 const Project = async ({ params }: { params: { uid: string } }) => {
   const project = await queryProject(params.uid);
-  console.log({ project });
   const projectContent = project.data;
   const otherProjects = await queryOtherProjects(project.id);
+
   return (
     <div className={styles.projectPage}>
-      <Container colour={Colour.Yellow}>
-        <div className={styles.badgeList}>
-          <Badge variant="bold" colour={Colour.Blue}>
-            {formatDatePreview(
-              projectContent.start_date?.toString(),
-              projectContent.end_date?.toString()
-            )}
-          </Badge>
-          <Badge>📍 {projectContent.location}</Badge>
-          <Badge>💼 {projectContent.company}</Badge>
+      <div className={styles.leftColumn}>
+        <div className={styles.fullProjectPreview} aria-hidden="true">
+          <ProjectPreview
+            attributes={projectContent.attributes}
+            title={projectContent.title}
+            accent_colour={projectContent.accent_colour}
+            start_date={projectContent.start_date}
+            end_date={projectContent.end_date}
+            reducedInfo={true}
+          />
         </div>
-        <ProjectPreview
-          attributes={projectContent.attributes}
-          title={projectContent.title}
-          accent_colour={projectContent.accent_colour}
-          start_date={projectContent.start_date}
-          end_date={projectContent.end_date}
-          reducedInfo={true}
+        <ProjectScroller
+          title="Other projects"
+          projects={otherProjects}
+          wrap={true}
         />
-        <PrismicRichText field={projectContent.description} />
-      </Container>
-      <ProjectScroller projects={otherProjects} />
+      </div>
+      <div className={styles.rightColumn}>
+        <Container colour={Colour.Yellow}>
+          <div className={styles.badgeList}>
+            <Badge variant="bold" colour={Colour.Blue}>
+              {formatDatePreview(
+                projectContent.start_date?.toString(),
+                projectContent.end_date?.toString()
+              )}
+            </Badge>
+            <Badge>📍 {projectContent.location}</Badge>
+            <Badge>💼 {projectContent.company}</Badge>
+          </div>
+          <div className={styles.reducedProjectPreview}>
+            <ProjectPreview
+              attributes={projectContent.attributes}
+              title={projectContent.title}
+              accent_colour={projectContent.accent_colour}
+              start_date={projectContent.start_date}
+              end_date={projectContent.end_date}
+              reducedInfo={true}
+            />
+          </div>
+          <PrismicRichText field={projectContent.description} />
+        </Container>
+      </div>
     </div>
   );
 };

@@ -10,6 +10,7 @@ import { createClient } from "@/prismicio";
 import * as prismic from "@prismicio/client";
 import { About } from "./components/About/About";
 import { HomeDocumentDataProjectsItem } from "../../prismicio-types";
+import { QuickLinks } from "./components/QuickLinks/QuickLinks";
 
 function queryHomepage() {
   const client = createClient();
@@ -24,7 +25,6 @@ function queryProjects(
   return Promise.all(
     projectContentRelationships.map((cR) => {
       if (prismic.isFilled.contentRelationship(cR.project) && cR.project.uid) {
-        console.log({ HELLO: cR.project.uid });
         return client.getByUID("project", cR.project.uid);
       }
     })
@@ -54,13 +54,24 @@ export default async function Home() {
               </Badge>
             </div>
             <div className={styles.pinBoard}>
-              <PinBoard />
+              <div className={styles.pinBoardLeft}>
+                <PinBoard />
+                <div className={styles.quickLinksFull}>
+                  <QuickLinks
+                    links={page.data.quick_links}
+                    collapsible={false}
+                  />
+                </div>
+              </div>
               <SpotifyWidget />
             </div>
           </div>
         </div>
       </Container>
-      {projects && <ProjectScroller projects={projects} />}
+      <div className={styles.quickLinksSmall}>
+        <QuickLinks links={page.data.quick_links} />
+      </div>
+      {projects && <ProjectScroller projects={projects} wrap={false} />}
       <About
         title={aboutData?.title?.toString()}
         description={aboutData?.description}

@@ -29,11 +29,16 @@
 
 @container page (min-width: 500px) {
   .projectContainer {
-    /* overflow: scroll; */
     overflow: hidden;
   }
   .projectScroller {
-    /* padding-inline-end: 0; */
-    /* width: auto; */
+    width: 100%;
+    padding-inline-end: 0;
+  }
+}
+
+@container page (min-width: 768px) {
+  .projectScroller[data-wrap="true"] {
+    flex-direction: column;
   }
 }

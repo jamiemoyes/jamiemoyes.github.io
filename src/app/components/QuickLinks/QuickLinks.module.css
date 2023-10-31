@@ -1,0 +1,21 @@
+.disclosure {
+  background: var(--bg-secondary);
+  border-radius: 0.7rem;
+  padding: var(--container-padding);
+}
+
+.disclosure li {
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
+.disclosure li a {
+  text-decoration: underline;
+}
+
+.disclosure h2 {
+  font-weight: 400;
+  margin: 0;
+  font-size: 1rem;
+  font-style: italic;
+}

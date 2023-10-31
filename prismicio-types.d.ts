@@ -157,6 +157,41 @@ export interface HomeDocumentDataAboutItem {
   description: prismic.RichTextField;
 }
 
+/**
+ * Item in *Home → Quick Links*
+ */
+export interface HomeDocumentDataQuickLinksItem {
+  /**
+   * title field in *Home → Quick Links*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.quick_links[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * link field in *Home → Quick Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.quick_links[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * pageId field in *Home → Quick Links*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.quick_links[].pageid
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  pageid: prismic.KeyTextField;
+}
+
 type HomeDocumentDataSlicesSlice = never;
 
 /**
@@ -208,6 +243,17 @@ interface HomeDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   about: prismic.GroupField<Simplify<HomeDocumentDataAboutItem>>;
+
+  /**
+   * Quick Links field in *Home*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.quick_links[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  quick_links: prismic.GroupField<Simplify<HomeDocumentDataQuickLinksItem>>;
 
   /**
    * Slice Zone field in *Home*
@@ -489,6 +535,7 @@ declare module "@prismicio/client" {
       HomeDocumentDataPinBoardLinksItem,
       HomeDocumentDataProjectsItem,
       HomeDocumentDataAboutItem,
+      HomeDocumentDataQuickLinksItem,
       HomeDocumentDataSlicesSlice,
       ProjectDocument,
       ProjectDocumentData,

@@ -15,6 +15,7 @@ interface ProjectPreviewType extends Partial<ProjectDocumentData> {
   reducedInfo: boolean;
   uid?: string;
   async?: string;
+  badge?: boolean;
 }
 
 const ProjectPreview: React.FC<ProjectPreviewType> = ({
@@ -25,12 +26,13 @@ const ProjectPreview: React.FC<ProjectPreviewType> = ({
   end_date: to,
   reducedInfo,
   uid,
+  badge = true,
 }) => {
   return (
     <div className={styles.project}>
       <div className={styles.titleContainer}>
         <h3>{title}</h3>
-        {!reducedInfo && (
+        {!reducedInfo && badge && (
           <Badge variant="bold" colour={colour?.toString() as Colour}>
             {formatDatePreview(from?.toString(), to?.toString())}
           </Badge>

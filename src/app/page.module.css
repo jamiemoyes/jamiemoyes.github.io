@@ -52,9 +52,17 @@
 }
 
 .pinBoard {
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
   gap: var(--container-padding);
   align-items: flex-start;
+}
+
+.pinBoardLeft {
+  display: flex;
+  flex-direction: column;
+  gap: var(--container-padding);
+  /* max-width: 12rem; */
 }
 
 .responsiveGrid {
@@ -63,8 +71,32 @@
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
+.quickLinksFull {
+  display: none;
+}
+
 .media {
   display: flex;
   flex-direction: column;
   gap: var(--container-padding);
+}
+
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3.5rem;
+  }
+
+  .quickLinksSmall {
+    display: none;
+  }
+
+  .quickLinksFull {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .pinBoard {
+    display: flex;
+  }
 }
