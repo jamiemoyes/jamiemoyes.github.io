@@ -12,8 +12,10 @@ interface Image {
   url: string;
   width: number;
 }
+
 const SpotifyWidget: React.FC = async () => {
-  const trackInfo = await fetch(
+  console.log({ api_URL: process.env.NEXT_PUBLIC_API_URL });
+  const trackInfo: TrackInfo = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/spotify`
   )
     .then((res) => res.json())
