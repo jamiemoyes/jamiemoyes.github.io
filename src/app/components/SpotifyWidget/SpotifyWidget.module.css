@@ -1,6 +1,6 @@
 .trackContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
   overflow: hidden;
   padding: var(--container-padding);
   background-color: var(--bg-secondary);
@@ -18,8 +18,49 @@
   display: grid;
   grid-template-rows: max-content 1fr max-content;
   font-size: 0.8rem;
+  height: 100%;
 }
+
 .trackTitle {
   font-size: 1.5rem;
   align-self: end;
+}
+
+.trackInfoPlaceholder {
+  display: flex;
+  flex-direction: column;
+  gap: var(--container-padding);
+  font-size: 0.8rem;
+}
+
+.trackTextPlaceholder {
+  width: 100%;
+  background-color: var(--placeholder);
+  height: 1rem;
+  border-radius: 0.3rem;
+  animation: pulse infinite 2s 0.3s;
+}
+
+.artworkPlaceholder {
+  aspect-ratio: 1;
+  width: 100%;
+  border-radius: 0.3rem;
+  background-color: var(--placeholder);
+  animation: pulse infinite 2s;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+}
+
+@media (min-width: 60rem) {
+  .trackContainer {
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  }
 }

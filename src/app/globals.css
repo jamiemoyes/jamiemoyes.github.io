@@ -18,6 +18,7 @@
   --foreground-red: #dc2800;
   --foreground-purple: #a889ff;
   --container-padding: 0.7rem;
+  --placeholder: #565656;
 }
 
 * {

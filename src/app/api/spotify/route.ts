@@ -25,8 +25,6 @@ export async function GET() {
     .then((json) => json.access_token)
     .catch((err) => console.error(err));
 
-  console.log({ accessToken });
-
   const response = await fetch(
     `${playerEndpoint}?time_range=short_term&limit=1`,
     {

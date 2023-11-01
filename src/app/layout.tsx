@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
         <header className={styles.header}>
           <a href="/">
             <h1>J Moyes</h1>
