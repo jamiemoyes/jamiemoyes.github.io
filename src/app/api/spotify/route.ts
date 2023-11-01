@@ -35,16 +35,17 @@ export async function GET() {
   )
     .then((res) => res.json())
     .then((json) => {
-      console.log({ items: json.items });
-      const [track] = json.items || [];
-      const simplifiedTrack = {
-        title: track.name,
-        artist: track.artists?.[0].name,
-        href: track.external_urls.spotify,
-        images: track.album.images,
-      };
-
-      return simplifiedTrack;
+      if (json.items) {
+        const [track] = json.items;
+        const simplifiedTrack = {
+          title: track?.name,
+          artist: track.artists?.[0].name,
+          href: track.external_urls.spotify,
+          images: track.album.images,
+        };
+        return simplifiedTrack;
+      }
+      return {};
     })
     .then((json) => ({ statusCode: 200, body: JSON.stringify(json) }));
 
