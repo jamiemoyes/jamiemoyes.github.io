@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import styles from "./SpotifyWidget.module.css";
 
 interface TrackInfo {
@@ -23,7 +22,7 @@ const SpotifyWidget: React.FC = async () => {
 
   return (
     <div className={styles.trackContainer}>
-      <img className={styles.artwork} src={trackInfo.images[0].url} />
+      <img className={styles.artwork} src={trackInfo.images[0].url} alt="" />
       <a href={trackInfo.href} target="_blank">
         <div className={styles.trackInfo}>
           <p>🎧 Top listened to</p>

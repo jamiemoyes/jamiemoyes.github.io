@@ -42,7 +42,7 @@ export default async function Home() {
       <Container colour={Colour.Red}>
         <div className={styles.responsiveGrid}>
           {page.data.bio.map((bio) => (
-            <Bio key={bio.description} content={bio} />
+            <Bio key={bio.location?.toString()} content={bio} />
           ))}
           <div className={styles.media}>
             <div className={styles.badgeList}>

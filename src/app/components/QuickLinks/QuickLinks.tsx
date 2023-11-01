@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { HomeDocumentDataQuickLinksItem } from "../../../../prismicio-types";
 import styles from "./QuickLinks.module.css";
+import { LinkField, FilledLinkToWebField } from "@prismicio/client";
 
 interface IQuickLinks {
   links: HomeDocumentDataQuickLinksItem[];
@@ -25,7 +26,7 @@ const QuickLinks: React.FC<IQuickLinks> = ({ links, collapsible = true }) => {
               href = `/project/${qLink.pageid.toString()}`;
               target = "";
             } else {
-              href = qLink.link.url;
+              href = (qLink.link as FilledLinkToWebField).url;
               target = "_blank";
             }
             return (
