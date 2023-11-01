@@ -79,7 +79,7 @@ jobs:
          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
-         NEXT_PUBLIC_API_URL: ${{ env.NEXT_PUBLIC_API_URL }}
+         NEXT_PUBLIC_API_URL: https://portfoliopreview.moyes.dev
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
