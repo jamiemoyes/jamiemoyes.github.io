@@ -22,6 +22,14 @@ function queryOtherProjects(id: string) {
   });
 }
 
+export async function generateStaticParams() {
+  const client = createClient();
+  const projects = await client.getAllByType("project");
+  return projects.map((project) => ({
+    uid: project.uid,
+  }));
+}
+
 const Project = async ({ params }: { params: { uid: string } }) => {
   const project = await queryProject(params.uid);
   const projectContent = project.data;
