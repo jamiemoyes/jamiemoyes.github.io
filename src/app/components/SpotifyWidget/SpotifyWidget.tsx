@@ -18,7 +18,7 @@ const SpotifyWidget: React.FC = async () => {
           <div className={styles.trackInfo}>
             <p>🎧 Top listened to</p>
             <p className={styles.trackTitle}>{trackInfo.title}</p>
-            <p>{trackInfo.artist}</p>
+            <p className={styles.trackArtist}>{trackInfo.artist}</p>
           </div>
         </a>
       </div>

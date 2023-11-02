@@ -21,6 +21,12 @@
   height: 100%;
 }
 
+.trackInfo p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .trackTitle {
   font-size: 1.5rem;
   align-self: end;
