@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { HomeDocumentDataQuickLinksItem } from "../../../../prismicio-types";
 import styles from "./QuickLinks.module.css";
-import { LinkField, FilledLinkToWebField } from "@prismicio/client";
+import { FilledLinkToWebField } from "@prismicio/client";
 
 interface IQuickLinks {
   links: HomeDocumentDataQuickLinksItem[];
@@ -15,7 +15,11 @@ const QuickLinks: React.FC<IQuickLinks> = ({ links, collapsible = true }) => {
     if (collapsible) setExpanded((prevExpanded) => !prevExpanded);
   }
   return (
-    <div className={styles.disclosure}>
+    <div
+      className={`${styles.disclosure} ${
+        collapsible ? styles.collapsible : ""
+      }`}
+    >
       <h2 onClick={toggleExpanded}>Quick links</h2>
       {expanded && (
         <ul>

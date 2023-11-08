@@ -1,6 +1,13 @@
-import { TrackInfo } from "@/app/shared/types/types";
 import styles from "./SpotifyWidget.module.css";
+import localFont from "next/font/local";
 import { fetchSpotifyTopTrack } from "./spotify";
+import Image from "next/image";
+
+const kyivType = localFont({
+  // src: "../../fonts/KyivTypeSans-VarGX.ttf",
+  src: "../../fonts/KyivTypeSans-Regular2.woff2",
+  weight: "200",
+});
 
 const SpotifyWidget: React.FC = async () => {
   console.log({ api_URL: process.env.NEXT_PUBLIC_API_URL });
@@ -9,15 +16,20 @@ const SpotifyWidget: React.FC = async () => {
   return (
     trackInfo && (
       <div className={styles.trackContainer}>
-        <img
+        <Image
           className={styles.artwork}
-          src={trackInfo.images?.[0]?.url}
+          width="640"
+          height="640"
+          layout="responsive"
+          src={`${trackInfo.images?.[0]?.url}`}
           alt=""
         />
         <a href={trackInfo.href} target="_blank">
           <div className={styles.trackInfo}>
-            <p>🎧 Top listened to</p>
-            <p className={styles.trackTitle}>{trackInfo.title}</p>
+            <h3>🎧 Top listened to</h3>
+            <p className={`${styles.trackTitle} ${kyivType.className}`}>
+              {trackInfo.title}
+            </p>
             <p className={styles.trackArtist}>{trackInfo.artist}</p>
           </div>
         </a>

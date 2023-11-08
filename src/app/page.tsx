@@ -55,7 +55,7 @@ export default async function Home() {
             </div>
             <div className={styles.pinBoard}>
               <div className={styles.pinBoardLeft}>
-                <PinBoard />
+                <PinBoard pins={page.data.pin_board_links} />
                 <div className={styles.quickLinksFull}>
                   <QuickLinks
                     links={page.data.quick_links}

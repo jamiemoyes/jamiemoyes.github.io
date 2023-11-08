@@ -1,22 +1,26 @@
+import { HomeDocumentDataPinBoardLinksItem } from "../../../../prismicio-types";
 import classes from "./PinBoard.module.css";
+import { FilledLinkToWebField } from "@prismicio/client";
 
-const socialLinks = [
-  { title: "LinkedIn", href: "#" },
-  { title: "Resume", href: "#" },
-  { title: "Github", href: "#" },
-  { title: "Dribbble", href: "#" },
-];
+interface PinBoardProps {
+  pins: HomeDocumentDataPinBoardLinksItem[];
+}
 
-const PinBoard: React.FC = () => {
+const PinBoard: React.FC<PinBoardProps> = ({ pins }) => {
   return (
     <div className={classes.pinBoard}>
       <h2>Pinboard</h2>
       <ul>
-        {socialLinks.map(({ title, href }) => (
-          <li key={href}>
-            <a href={href}>{title}</a>
-          </li>
-        ))}
+        {pins.map(({ social_link, link_name }) => {
+          const { url } = social_link as FilledLinkToWebField;
+          return (
+            <li key={url}>
+              <a href={url} target="_blank">
+                {link_name}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

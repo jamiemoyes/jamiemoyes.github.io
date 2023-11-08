@@ -25,9 +25,6 @@
 
 .header {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
-  --bg-primary: #f1f1f1;
-  --bg-secondary: #272727;
   background-color: var(--bg-primary);
   background-image: url("/star.svg");
   background-repeat: no-repeat;
@@ -84,6 +81,10 @@
 @media (min-width: 768px) {
   .header h1 {
     font-size: 3.5rem;
+  }
+
+  .header {
+    background-size: 5rem;
   }
 
   .quickLinksSmall {

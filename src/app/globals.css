@@ -4,12 +4,11 @@
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
   --bg-primary: #f1f1f1;
   --bg-secondary: #272727;
   --text-primary: #000000;
   --text-secondary: #f1f1f1;
-  --bg-red: #ffa195;
+  --bg-red: linear-gradient(145deg, #ffa195, #ffa19500);
   --bg-yellow: #fff0ca;
   --bg-purple: #f1d3ff;
   --foreground-yellow: #eeff89;
@@ -27,10 +26,29 @@
   margin: 0;
 }
 
+.dark {
+  --bg-primary: #000;
+  --bg-secondary: #272727;
+  --text-primary: #f1f1f1;
+  --text-secondary: #f1f1f1;
+  --bg-red: #d9d9d9;
+  --bg-yellow: #e3ff72;
+  --bg-purple: #272727;
+  --foreground-yellow: #eeff89;
+  --foreground-blue: #4553cb;
+  --foreground-lightblue: #00b4dc;
+  --foreground-red: #dc2800;
+  --foreground-purple: #a889ff;
+  --container-padding: 0.7rem;
+  --placeholder: #565656;
+}
+
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
