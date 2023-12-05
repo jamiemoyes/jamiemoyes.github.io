@@ -1,6 +1,6 @@
 {
   "repositoryName": "moyes-portfolio",
   "adapter": "@slicemachine/adapter-next",
-  "libraries": [],
+  "libraries": ["./src/slices"],
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }
