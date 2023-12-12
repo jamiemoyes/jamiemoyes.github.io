@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--container-padding);
+  outline: var(--container-outline-dark);
 }
 
 .red {
@@ -12,9 +13,15 @@
 
 .yellow {
   background: linear-gradient(145deg, var(--bg-yellow), #efff9500);
-  border: solid 1px black;
+  outline: var(--container-outline-dark, solid 1px black);
 }
 
 .purple {
   background: var(--bg-purple);
+}
+
+@media (prefers-color-scheme: dark) {
+  .yellow {
+    background: var(--container-bg-dark);
+  }
 }

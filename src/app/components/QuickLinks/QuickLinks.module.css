@@ -2,6 +2,7 @@
   background: var(--bg-secondary);
   border-radius: 0.7rem;
   padding: var(--container-padding);
+  color: var(--text-secondary);
 }
 
 .disclosure li {
@@ -22,4 +23,11 @@
   margin: 0;
   font-size: 1rem;
   font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+  .disclosure {
+    background: var(--container-bg-dark);
+    outline: var(--container-outline-dark);
+  }
 }

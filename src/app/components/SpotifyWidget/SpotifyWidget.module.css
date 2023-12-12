@@ -7,6 +7,7 @@
   border-radius: 0.5rem;
   gap: var(--container-padding);
   width: 100%;
+  color: var(--text-secondary);
 }
 .artwork {
   aspect-ratio: 1;

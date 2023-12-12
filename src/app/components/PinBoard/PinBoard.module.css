@@ -26,3 +26,13 @@
   text-decoration: none;
   color: var(--text-primary);
 }
+
+@media (prefers-color-scheme: dark) {
+  .pinBoard a {
+    /* color: var(--text-secondary); */
+  }
+
+  .pinBoard {
+    border: unset;
+  }
+}

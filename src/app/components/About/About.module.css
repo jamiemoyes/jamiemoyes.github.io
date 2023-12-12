@@ -18,3 +18,16 @@
   background-repeat: no-repeat;
   background-position: 0 50%;
 }
+
+@media (prefers-color-scheme: dark) {
+  .aboutSection {
+    color: var(--text-secondary);
+  }
+  .divider {
+    border-top: 1px solid var(--text-secondary);
+  }
+
+  .aboutSection h2 {
+    background-image: none;
+  }
+}

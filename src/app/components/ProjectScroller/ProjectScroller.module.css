@@ -10,7 +10,7 @@
 }
 
 .projectContainer h2 {
-  color: var(--bg-secondary, #272727);
+  color: var(--text-primary, #272727);
   font-weight: 400;
   font-size: 1rem;
 }
@@ -40,5 +40,15 @@
 @container page (min-width: 768px) {
   .projectScroller[data-wrap="true"] {
     flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .projectContainer h2 {
+    color: var(--text-secondary);
+  }
+
+  .projectContainer {
+    outline: var(--container-outline-dark);
   }
 }

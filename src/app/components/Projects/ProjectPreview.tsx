@@ -29,7 +29,7 @@ const ProjectPreview: React.FC<ProjectPreviewType> = ({
   badge = true,
 }) => {
   return (
-    <div className={styles.project}>
+    <div className={styles.project} data-reduced={reducedInfo}>
       <div className={styles.titleContainer}>
         <h3>{title}</h3>
         {!reducedInfo && badge && (

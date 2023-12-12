@@ -30,7 +30,6 @@
   display: flex;
   gap: var(--container-padding);
   flex-wrap: wrap-reverse;
-  /* padding-inline: auto; */
 }
 
 @media (min-width: 60rem) {
@@ -47,5 +46,12 @@
 
   .reducedProjectPreview {
     display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .projectPage p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
   }
 }
