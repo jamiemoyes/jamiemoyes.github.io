@@ -38,7 +38,7 @@
   }
 
   .badge[data-variant="bold"] {
-    border: solid 1px var(--text-secondary);
-    color: var(--text-secondary);
+    border: none;
+    color: unset;
   }
 }

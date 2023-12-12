@@ -66,9 +66,9 @@ a {
     --bg-yellow: var(--accent-dark);
     --bg-purple: var(--container-bg-dark);
     --foreground-yellow: #eeff89;
-    --foreground-blue: var(--bg-primary);
-    --foreground-lightblue: var(--bg-primary);
-    --foreground-red: var(--bg-primary);
+    --foreground-blue: var(--transparent);
+    --foreground-lightblue: var(--transparent);
+    --foreground-red: var(--transparent);
     --foreground-purple: rgb(72, 0, 255);
     --placeholder: #56565600;
   }
