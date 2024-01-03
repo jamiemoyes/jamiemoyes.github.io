@@ -45,6 +45,7 @@ const Project = async ({ params }: { params: { uid: string } }) => {
             accent_colour={projectContent.accent_colour}
             start_date={projectContent.start_date}
             end_date={projectContent.end_date}
+            is_current={projectContent.is_current}
             reducedInfo={true}
           />
         </div>
@@ -60,7 +61,8 @@ const Project = async ({ params }: { params: { uid: string } }) => {
             <Badge variant="bold" colour={Colour.Blue}>
               {formatDatePreview(
                 projectContent.start_date?.toString(),
-                projectContent.end_date?.toString()
+                !projectContent.is_current &&
+                  projectContent.end_date?.toString()
               )}
             </Badge>
             <Badge>📍 {projectContent.location}</Badge>

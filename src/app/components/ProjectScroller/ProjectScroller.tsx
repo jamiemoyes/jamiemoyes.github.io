@@ -1,15 +1,7 @@
 import { Colour } from "@/app/shared/types/types";
 import { ProjectPreview } from "../Projects/ProjectPreview";
 import styles from "./ProjectScroller.module.css";
-import {
-  HomeDocumentDataProjectsItem,
-  ProjectDocument,
-} from "../../../../prismicio-types";
-import { Client } from "@prismicio/client";
-import { createClient } from "@/prismicio";
-import * as prismic from "@prismicio/client";
-
-const colors = [Colour.Red, Colour.Blue, Colour.LightBlue];
+import { ProjectDocument } from "../../../../prismicio-types";
 
 type ProjectPreviewType = {
   title?: string;
@@ -37,6 +29,7 @@ const ProjectScroller: React.FC<ProjectPreviewType> = async ({
                 company={project.data.company}
                 end_date={project.data.end_date}
                 start_date={project.data.start_date}
+                is_current={project.data.is_current}
                 uid={project.uid}
                 title={project.data.title}
                 badge={!wrap}

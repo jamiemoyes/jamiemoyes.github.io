@@ -4,12 +4,6 @@ import { ArrowRight } from "@/app/shared/icons";
 import { Badge } from "../Badge/Badge";
 import { ProjectDocumentData } from "../../../../prismicio-types";
 import { formatDatePreview } from "@/app/shared/utils";
-import { useEffect } from "react";
-
-// interface Attribute {
-//   text: string;
-//   icon: string;
-// }
 
 interface ProjectPreviewType extends Partial<ProjectDocumentData> {
   reducedInfo: boolean;
@@ -24,6 +18,7 @@ const ProjectPreview: React.FC<ProjectPreviewType> = ({
   attributes,
   start_date: from,
   end_date: to,
+  is_current: isCurrent,
   reducedInfo,
   uid,
   badge = true,
@@ -34,7 +29,7 @@ const ProjectPreview: React.FC<ProjectPreviewType> = ({
         <h3>{title}</h3>
         {!reducedInfo && badge && (
           <Badge variant="bold" colour={colour?.toString() as Colour}>
-            {formatDatePreview(from?.toString(), to?.toString())}
+            {formatDatePreview(from?.toString(), !isCurrent && to?.toString())}
           </Badge>
         )}
       </div>
