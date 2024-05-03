@@ -23,6 +23,7 @@ const ProjectPreview: React.FC<ProjectPreviewType> = ({
   uid,
   badge = true,
 }) => {
+  console.log({ from, to });
   return (
     <div className={styles.project} data-reduced={reducedInfo}>
       <div className={styles.titleContainer}>

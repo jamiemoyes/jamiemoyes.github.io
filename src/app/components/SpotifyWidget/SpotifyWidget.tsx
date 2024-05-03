@@ -8,7 +8,6 @@ const kyivType = localFont({
 });
 
 const SpotifyWidget: React.FC = async () => {
-  console.log({ api_URL: process.env.NEXT_PUBLIC_API_URL });
   const trackInfo = await fetchSpotifyTopTrack();
 
   return (

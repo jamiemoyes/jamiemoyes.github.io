@@ -4,6 +4,7 @@ export enum Colour {
   Purple = "purple",
   Blue = "blue",
   LightBlue = "light-blue",
+  Green = 'green'
 }
 
 export interface TrackInfo {

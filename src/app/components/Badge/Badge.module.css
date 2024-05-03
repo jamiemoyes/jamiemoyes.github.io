@@ -31,6 +31,10 @@
   background: var(--foreground-lightblue, #00b4dc);
 }
 
+.badge[data-variant="bold"][data-color="green"] {
+  background: var(--foreground-green, #217542);
+}
+
 @media (prefers-color-scheme: dark) {
   .badge[data-variant="standard"] {
     color: var(--text-secondary);

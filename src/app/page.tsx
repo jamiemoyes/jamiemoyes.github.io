@@ -25,6 +25,7 @@ function queryProjects(
   return Promise.all(
     projectContentRelationships.map((cR) => {
       if (prismic.isFilled.contentRelationship(cR.project) && cR.project.uid) {
+        console.log({ cR });
         return client.getByUID("project", cR.project.uid);
       }
     })

@@ -16,6 +16,7 @@
   --foreground-lightblue: #009adc;
   --foreground-red: #dc2800;
   --foreground-purple: #a889ff;
+  --foreground-green: #217542;
   --container-padding: 0.7rem;
   --placeholder: #565656;
 }
@@ -68,6 +69,7 @@ a {
     --foreground-yellow: #eeff89;
     --foreground-blue: var(--transparent);
     --foreground-lightblue: var(--transparent);
+    --foreground-green: var(--transparent);
     --foreground-red: var(--transparent);
     --foreground-purple: rgb(72, 0, 255);
     --placeholder: #56565600;
