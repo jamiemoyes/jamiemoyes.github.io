@@ -8,9 +8,9 @@ import { SpotifyWidget } from "./components/SpotifyWidget/SpotifyWidget";
 import { ProjectScroller } from "./components/ProjectScroller/ProjectScroller";
 import { createClient } from "@/prismicio";
 import * as prismic from "@prismicio/client";
-import { About } from "./components/About/About";
 import { HomeDocumentDataProjectsItem } from "../../prismicio-types";
 import { QuickLinks } from "./components/QuickLinks/QuickLinks";
+import { TrebleClef } from "./shared/icons";
 
 function queryHomepage() {
   const client = createClient();
@@ -25,7 +25,6 @@ function queryProjects(
   return Promise.all(
     projectContentRelationships.map((cR) => {
       if (prismic.isFilled.contentRelationship(cR.project) && cR.project.uid) {
-        console.log({ cR });
         return client.getByUID("project", cR.project.uid);
       }
     })
@@ -51,7 +50,7 @@ export default async function Home() {
                 <i>📍</i> Glasgow
               </Badge>
               <Badge>
-                <i>💼</i> AND Digital
+                <i>💼</i> br-dge
               </Badge>
             </div>
             <div className={styles.pinBoard}>
@@ -73,10 +72,16 @@ export default async function Home() {
         <QuickLinks links={page.data.quick_links} />
       </div>
       {projects && <ProjectScroller projects={projects} wrap={false} />}
-      <About
-        title={aboutData?.title?.toString()}
-        description={aboutData?.description}
-      />
+
+      <div className={styles.footer}>
+        <a
+          target="_blank"
+          aria-label="Link to my soundcloud"
+          href="http://www.soundcloud.com/jamiemoyes"
+        >
+          <TrebleClef />
+        </a>
+      </div>
     </>
   );
 }
