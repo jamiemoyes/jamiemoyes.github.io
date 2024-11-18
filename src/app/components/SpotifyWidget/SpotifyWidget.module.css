@@ -10,10 +10,15 @@
   color: var(--text-secondary);
 }
 .artwork {
-  aspect-ratio: 1;
   width: 100%;
+  max-width: min-content;
+  aspect-ratio: 1/1;
   border: solid 0.5px white;
   border-radius: 0.3rem;
+object-fit: cover;
+}
+.artwork { 
+  
 }
 .trackInfo {
   display: grid;
@@ -37,28 +42,28 @@
   align-self: end;
 }
 
-.trackInfoPlaceholder {
+/* .trackInfoPlaceholder {
   display: flex;
   flex-direction: column;
   gap: var(--container-padding);
   font-size: 0.8rem;
-}
+} */
 
-.trackTextPlaceholder {
+/* .trackTextPlaceholder {
   width: 100%;
   background-color: var(--placeholder);
   height: 1rem;
   border-radius: 0.3rem;
   animation: pulse infinite 2s 0.3s;
-}
+} */
 
-.artworkPlaceholder {
+/* .artworkPlaceholder {
   aspect-ratio: 1;
   width: 100%;
   border-radius: 0.3rem;
   background-color: var(--placeholder);
   animation: pulse infinite 2s;
-}
+} */
 
 @keyframes pulse {
   0% {
