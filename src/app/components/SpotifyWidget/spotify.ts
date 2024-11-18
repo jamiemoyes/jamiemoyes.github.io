@@ -29,8 +29,6 @@ export async function fetchSpotifyTopTrack(): Promise<Partial<TrackInfo>> {
     })
     .catch((err) => console.error(err));
 
-  console.log({ accessToken });
-
   return fetch(`${playerEndpoint}?time_range=short_term&limit=1`, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
