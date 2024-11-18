@@ -9,17 +9,17 @@ interface BioType {
 const Bio: React.FC<BioType> = ({ content }) => {
   return (
     <div className={classes.aboutSection}>
-      <Image
+      <img
         src={`${content.profile_picture.url}`}
         alt={`${content.profile_picture.alt}`}
-        sizes="100vw"
-        width="272"
-        height="272"
-        priority
-        style={{
-          width: "100%",
-          height: "auto",
-        }}
+        // sizes="100vw"
+        // width="272"
+        // height="272"
+        // priority
+        // style={{
+        //   width: "100%",
+        //   height: "auto",
+        // }}
       />
       <PrismicRichText field={content.description} />
     </div>

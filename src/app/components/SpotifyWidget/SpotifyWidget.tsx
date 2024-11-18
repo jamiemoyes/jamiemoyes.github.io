@@ -1,8 +1,9 @@
 import styles from "./SpotifyWidget.module.css";
 import localFont from "next/font/local";
-import { fetchSpotifyTopTrack } from "./spotify";
+
 import Link from "next/link";
 import Image from "next/image";
+import { fetchSpotifyTopTrack } from "./spotify";
 
 const kyivType = localFont({
   src: "../../fonts/KyivTypeSans-Regular2.woff2",
@@ -14,15 +15,15 @@ const SpotifyWidget = async () => {
   return (
     trackInfo && (
       <div className={styles.trackContainer}>
-        <Image
+        <img
           className={styles.artwork}
-          sizes="100vw"
-          width={300}
-          height={300}
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
+          // sizes="100vw"
+          // width={300}
+          // height={300}
+          // style={{
+          //   width: "100%",
+          //   height: "auto",
+          // }}
           // height="640"
           // layout="responsive"
           src={`${trackInfo.images?.[0]?.url}`}
