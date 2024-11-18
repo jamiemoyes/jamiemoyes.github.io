@@ -30,8 +30,8 @@ export async function generateStaticParams() {
   }));
 }
 
-const Project = async ({ params }: { params: { uid: string } }) => {
-  const project = await queryProject(params.uid);
+const Project = async ({ params }: { params: Promise<{ uid: string }> }) => {
+  const project = await queryProject((await params).uid);
   const projectContent = project.data;
   const otherProjects = await queryOtherProjects(project.id);
 

@@ -1,3 +1,5 @@
+"use server";
+
 import { TrackInfo } from "@/app/shared/types/types";
 
 const refreshToken = process.env.SPOTIFY_REFRESH_TOKEN;
@@ -22,8 +24,12 @@ const options = {
 export async function fetchSpotifyTopTrack(): Promise<Partial<TrackInfo>> {
   const accessToken = await fetch(tokenEndpoint, options)
     .then((res) => res.json())
-    .then((json) => json.access_token)
+    .then((json) => {
+      return json.access_token;
+    })
     .catch((err) => console.error(err));
+
+  console.log({ accessToken });
 
   return fetch(`${playerEndpoint}?time_range=short_term&limit=1`, {
     headers: {
@@ -34,7 +40,7 @@ export async function fetchSpotifyTopTrack(): Promise<Partial<TrackInfo>> {
     .then((json) => {
       if (json.items) {
         const [track] = json.items;
-        const simplifiedTrack = {
+        const simplifiedTrack: TrackInfo = {
           title: track?.name,
           artist: track.artists?.[0].name,
           href: track.external_urls.spotify,

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { HomeDocumentDataQuickLinksItem } from "../../../../prismicio-types";
 import styles from "./QuickLinks.module.css";
 import { FilledLinkToWebField } from "@prismicio/client";
+import Link from "next/link";
 
 interface IQuickLinks {
   links: HomeDocumentDataQuickLinksItem[];
@@ -35,9 +36,9 @@ const QuickLinks: React.FC<IQuickLinks> = ({ links, collapsible = true }) => {
             }
             return (
               <li key={`${qLink.title}-${href}`}>
-                <a target={target} href={href.toString()}>
+                <Link target={target} href={href.toString()}>
                   {qLink.title}
-                </a>
+                </Link>
               </li>
             );
           })}

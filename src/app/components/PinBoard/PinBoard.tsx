@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HomeDocumentDataPinBoardLinksItem } from "../../../../prismicio-types";
 import classes from "./PinBoard.module.css";
 import { FilledLinkToWebField } from "@prismicio/client";
@@ -15,9 +16,9 @@ const PinBoard: React.FC<PinBoardProps> = ({ pins }) => {
           const { url } = social_link as FilledLinkToWebField;
           return (
             <li key={url}>
-              <a href={url} target="_blank">
+              <Link href={url} target="_blank">
                 {link_name}
-              </a>
+              </Link>
             </li>
           );
         })}

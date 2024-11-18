@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import styles from "./page.module.css";
-import { useState } from "react";
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,9 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <header className={styles.header}>
-          <a href="/">
+          <Link href="/">
             <h1>J Moyes</h1>
-          </a>
+          </Link>
         </header>
         <main className={styles.main}>{children}</main>
       </body>
