@@ -1,5 +1,3 @@
-"use server";
-
 import { TrackInfo } from "@/app/shared/types/types";
 
 const refreshToken = process.env.SPOTIFY_REFRESH_TOKEN;

@@ -2,16 +2,19 @@ import styles from "./SpotifyWidget.module.css";
 import localFont from "next/font/local";
 
 import Link from "next/link";
-import Image from "next/image";
 import { fetchSpotifyTopTrack } from "./spotify";
+import { TrackInfo } from "@/app/shared/types/types";
 
 const kyivType = localFont({
   src: "../../fonts/KyivTypeSans-Regular2.woff2",
   weight: "200",
 });
 
-const SpotifyWidget = async () => {
-  const trackInfo = await fetchSpotifyTopTrack();
+const SpotifyWidget = async ({
+  trackInfo,
+}: {
+  trackInfo: Partial<TrackInfo>;
+}) => {
   return (
     trackInfo && (
       <div className={styles.trackContainer}>

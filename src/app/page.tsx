@@ -11,6 +11,7 @@ import * as prismic from "@prismicio/client";
 import { HomeDocumentDataProjectsItem } from "../../prismicio-types";
 import { QuickLinks } from "./components/QuickLinks/QuickLinks";
 import { TrebleClef } from "./shared/icons";
+import { fetchSpotifyTopTrack } from "./components/SpotifyWidget/spotify";
 
 function queryHomepage() {
   const client = createClient();
@@ -33,6 +34,7 @@ function queryProjects(
 
 export default async function Home() {
   const page = await queryHomepage();
+  const trackInfo = await fetchSpotifyTopTrack();
 
   const aboutData = page.data.about[0];
   const projects = await queryProjects(page.data.projects);
@@ -47,7 +49,7 @@ export default async function Home() {
           <div className={styles.media}>
             <div className={styles.badgeList}>
               <Badge>
-                <i>📍</i> Glasgow
+                <i>📍</i> London
               </Badge>
               <Badge>
                 <i>💼</i> br-dge
@@ -63,7 +65,7 @@ export default async function Home() {
                   />
                 </div>
               </div>
-              <SpotifyWidget />
+              <SpotifyWidget trackInfo={trackInfo} />
             </div>
           </div>
         </div>
