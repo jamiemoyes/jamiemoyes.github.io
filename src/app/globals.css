@@ -19,6 +19,7 @@
   --foreground-green: #217542;
   --container-padding: 0.7rem;
   --placeholder: #565656;
+  --treble-icon: #000;
 }
 
 * {
@@ -57,6 +58,8 @@ a {
     --container-outline-dark: solid 1px #414141;
     --accent-dark: #e3ff72;
     --highlight-dark: #f8f8f8;
+
+    --treble-icon: #fff;
 
     --transparent: rgba(213, 213, 213, 0);
     --bg-primary: #000000;
