@@ -49,10 +49,10 @@ export default async function Home() {
           <div className={styles.media}>
             <div className={styles.badgeList}>
               <Badge>
-                <i>📍</i> London
+                <i>📍</i> {page.data.bio[0]?.location}
               </Badge>
               <Badge>
-                <i>💼</i> br-dge
+                <i>💼</i> {page.data.bio[0]?.employment}
               </Badge>
             </div>
             <div className={styles.pinBoard}>
