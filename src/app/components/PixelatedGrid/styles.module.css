@@ -1,6 +1,6 @@
 .grid {
   --gap: 0px;
-  --grid-size: 9.5rem;
+  --grid-size: 100%;
   --colour: var(--foreground-pink);
 
   overflow: hidden;
@@ -15,7 +15,7 @@
     calc(var(--grid-size) / var(--cell-count) - var(--gap))
   );
   width: var(--grid-size);
-  height: var(--grid-size);
+  aspect-ratio: 1;
 }
 
 .populated {

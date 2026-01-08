@@ -67,9 +67,9 @@ export default async function Home() {
                     collapsible={false}
                   />
                 </div>
+                <PixelatedGrid />
               </div>
               <SpotifyWidget trackInfo={trackInfo} />
-              {/* <PixelatedGrid /> */}
             </div>
           </div>
         </div>
