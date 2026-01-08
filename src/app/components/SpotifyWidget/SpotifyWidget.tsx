@@ -3,18 +3,14 @@ import localFont from "next/font/local";
 
 import Link from "next/link";
 import { fetchSpotifyTopTrack } from "./spotify";
-import { TrackInfo } from "@/app/shared/types/types";
+import { Track, TrackInfo } from "@/app/shared/types/types";
 
 const kyivType = localFont({
   src: "../../fonts/KyivTypeSans-Regular2.woff2",
   weight: "200",
 });
 
-const SpotifyWidget = async ({
-  trackInfo,
-}: {
-  trackInfo: Partial<TrackInfo>;
-}) => {
+const SpotifyWidget = async ({ trackInfo }: { trackInfo: Partial<Track> }) => {
   return (
     trackInfo && (
       <div className={styles.trackContainer}>
@@ -29,16 +25,16 @@ const SpotifyWidget = async ({
           // }}
           // height="640"
           // layout="responsive"
-          src={`${trackInfo.images?.[0]?.url}`}
+          src={`${trackInfo.image?.find((image) => image.size === "extralarge")?.["#text"]}`}
           alt="Album cover art"
         />
-        <Link href={`${trackInfo.href}`} target="_blank">
+        <Link href={`${trackInfo.url}`} target="_blank">
           <div className={styles.trackInfo}>
-            <h3>🎧 Top listened to</h3>
+            <h3>🎧 Listening to</h3>
             <p className={`${styles.trackTitle} ${kyivType.className}`}>
-              {trackInfo.title}
+              {trackInfo.name}
             </p>
-            <p className={styles.trackArtist}>{trackInfo.artist}</p>
+            <p className={styles.trackArtist}>{trackInfo.artist?.["#text"]}</p>
           </div>
         </Link>
       </div>

@@ -11,6 +11,8 @@ import { QuickLinks } from "./components/QuickLinks/QuickLinks";
 import { TrebleClef } from "./shared/icons";
 import { fetchSpotifyTopTrack } from "./components/SpotifyWidget/spotify";
 import { PixelatedGrid } from "./components/PixelatedGrid/PixelatedGrid";
+import { fetchLastFmTrack } from "./components/SpotifyWidget/api";
+import { SpotifyWidget } from "./components/SpotifyWidget/SpotifyWidget";
 
 function queryHomepage() {
   const client = createClient();
@@ -33,10 +35,12 @@ function queryProjects(
 
 export default async function Home() {
   const page = await queryHomepage();
-  const trackInfo = await fetchSpotifyTopTrack();
 
-  const aboutData = page.data.about[0];
-  const projects = await queryProjects(page.data.projects);
+  const lastFmResponse = await fetchLastFmTrack();
+  const trackInfo = lastFmResponse.recenttracks.track[0];
+
+  // const aboutData = page.data.about[0];
+  // const projects = await queryProjects(page.data.projects);
 
   return (
     <>
@@ -64,8 +68,8 @@ export default async function Home() {
                   />
                 </div>
               </div>
-              {/* <SpotifyWidget trackInfo={trackInfo} /> */}
-              <PixelatedGrid />
+              <SpotifyWidget trackInfo={trackInfo} />
+              {/* <PixelatedGrid /> */}
             </div>
           </div>
         </div>
