@@ -16,6 +16,7 @@
   --foreground-lightblue: #009adc;
   --foreground-red: #dc2800;
   --foreground-purple: #a889ff;
+  --foreground-pink: #ff46a2;
   --foreground-green: #217542;
   --container-padding: 0.7rem;
   --placeholder: #565656;
@@ -56,7 +57,7 @@ a {
     --bg-secondary-dark: #272727;
     --container-bg-dark: #151515;
     --container-outline-dark: solid 1px #414141;
-    --accent-dark: #e3ff72;
+    --accent-dark: #fff172;
     --highlight-dark: #f8f8f8;
 
     --treble-icon: #fff;
@@ -73,6 +74,7 @@ a {
     --foreground-blue: var(--transparent);
     --foreground-lightblue: var(--transparent);
     --foreground-green: var(--transparent);
+    --foreground-pink: #ff46a2;
     --foreground-red: var(--transparent);
     --foreground-purple: rgb(72, 0, 255);
     --placeholder: #56565600;

@@ -4,14 +4,13 @@ import { Bio } from "./components/Bio/Bio";
 import { Badge } from "./components/Badge/Badge";
 import { PinBoard } from "./components/PinBoard/PinBoard";
 import { Colour } from "./shared/types/types";
-import { SpotifyWidget } from "./components/SpotifyWidget/SpotifyWidget";
-import { ProjectScroller } from "./components/ProjectScroller/ProjectScroller";
 import { createClient } from "@/prismicio";
 import * as prismic from "@prismicio/client";
 import { HomeDocumentDataProjectsItem } from "../../prismicio-types";
 import { QuickLinks } from "./components/QuickLinks/QuickLinks";
 import { TrebleClef } from "./shared/icons";
 import { fetchSpotifyTopTrack } from "./components/SpotifyWidget/spotify";
+import { PixelatedGrid } from "./components/PixelatedGrid/PixelatedGrid";
 
 function queryHomepage() {
   const client = createClient();
@@ -65,7 +64,8 @@ export default async function Home() {
                   />
                 </div>
               </div>
-              <SpotifyWidget trackInfo={trackInfo} />
+              {/* <SpotifyWidget trackInfo={trackInfo} /> */}
+              <PixelatedGrid />
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default async function Home() {
       <div className={styles.quickLinksSmall}>
         <QuickLinks links={page.data.quick_links} />
       </div>
-      {projects && <ProjectScroller projects={projects} wrap={false} />}
+      {/* {projects && <ProjectScroller projects={projects} wrap={false} />} */}
 
       <div className={styles.footer}>
         <a
