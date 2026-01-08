@@ -1,5 +1,3 @@
-"use server";
-
 import { LastFmResponse } from "@/app/shared/types/types";
 
 const BASE_URL = "http://ws.audioscrobbler.com/2.0";
